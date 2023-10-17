@@ -57,7 +57,6 @@ export const POST = async (request: Request) => {
     ) as Event;
   } catch (err) {
     // @ts-ignore
-
     return NextResponse.json({ message: err }, { status: 400 });
   }
 
@@ -83,12 +82,10 @@ export const POST = async (request: Request) => {
       );
 
       // @ts-ignore
-
       return NextResponse.json({ message: "User created" }, { status: 201 });
     } catch (err) {
       console.log(err);
       // @ts-ignore
-
       return NextResponse.json(
         { message: "Internal Server Error" },
         { status: 500 }
@@ -105,7 +102,6 @@ export const POST = async (request: Request) => {
       console.log("Invitation created", evnt?.data);
 
       // @ts-ignore
-
       return NextResponse.json(
         { message: "Invitation created" },
         { status: 201 }
@@ -114,7 +110,6 @@ export const POST = async (request: Request) => {
       console.log(err);
 
       // @ts-ignore
-
       return NextResponse.json(
         { message: "Internal Server Error" },
         { status: 500 }
@@ -134,7 +129,6 @@ export const POST = async (request: Request) => {
       await addMemberToCommunity(organization.id, public_user_data.user_id);
 
       // @ts-ignore
-
       return NextResponse.json(
         { message: "Invitation accepted" },
         { status: 201 }
@@ -143,7 +137,6 @@ export const POST = async (request: Request) => {
       console.log(err);
 
       // @ts-ignore
-
       return NextResponse.json(
         { message: "Internal Server Error" },
         { status: 500 }
@@ -163,13 +156,11 @@ export const POST = async (request: Request) => {
       await removeUserFromCommunity(public_user_data.user_id, organization.id);
 
       // @ts-ignore
-
       return NextResponse.json({ message: "Member removed" }, { status: 201 });
     } catch (err) {
       console.log(err);
 
       // @ts-ignore
-
       return NextResponse.json(
         { message: "Internal Server Error" },
         { status: 500 }
@@ -189,13 +180,11 @@ export const POST = async (request: Request) => {
       await updateCommunityInfo(id, name, slug, logo_url);
 
       // @ts-ignore
-
       return NextResponse.json({ message: "Member removed" }, { status: 201 });
     } catch (err) {
       console.log(err);
 
       // @ts-ignore
-
       return NextResponse.json(
         { message: "Internal Server Error" },
         { status: 500 }
@@ -215,7 +204,6 @@ export const POST = async (request: Request) => {
       await deleteCommunity(id);
 
       // @ts-ignore
-
       return NextResponse.json(
         { message: "Organization deleted" },
         { status: 201 }
@@ -224,7 +212,6 @@ export const POST = async (request: Request) => {
       console.log(err);
 
       // @ts-ignore
-
       return NextResponse.json(
         { message: "Internal Server Error" },
         { status: 500 }
